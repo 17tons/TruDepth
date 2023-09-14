@@ -75,9 +75,9 @@ class ViewController: UIViewController, ARSessionDelegate {
     // Generate a grid of points within the given rectangle
     private func generateGridPoints(for extent: CGRect) -> [CGPoint] {
         var points = [CGPoint]()
-        for i in 1...8 {
-            for j in 1...8 {
-                let point = CGPoint(x: CGFloat(j) / 9, y: 1 - CGFloat(i) / 9) // Mirrored points
+        for i in 1...11 {
+            for j in 1...11 {
+                let point = CGPoint(x: CGFloat(j) / 12, y: 1 - CGFloat(i) / 12) // Mirrored points
                 points.append(point)
             }
         }
@@ -138,7 +138,7 @@ class ViewController: UIViewController, ARSessionDelegate {
                 context.cgContext.drawPath(using: .fill)
                 
                 // Draw the text
-                let valueString = String(format: "%.2f m", values[index])
+                let valueString = String(format: "%.2fm", values[index])
                 let textPoint = CGPoint(x: x - 5, y: y - 10)  // adjust the y value as needed
                 valueString.draw(at: textPoint, withAttributes: textAttributes)
             }
